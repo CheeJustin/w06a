@@ -1,20 +1,51 @@
-﻿@{
-    ViewBag.Title = "Product Search";
+﻿@model IEnumerable<MVC01.Models.Northwind.Product>
+
+@{
+    ViewBag.Title = "Index";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2>Index</h2>
 
-<form action="/Product/Search" method="get">
-    <input type="text" name="q" />
-    <input type="submit" value="search" />
-</form>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Supplier.CompanyName)
+        </th>
+        <th></th>
+    </tr>
 
-@*@using (Html.BeginForm("Search", "Product", FormMethod.Get)) {
-        <input type="text" name="q" />
-        <input type="submit" value="search" />
-    }*@
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
 
-@*@{Html.BeginForm("Search", "Product", FormMethod.Get);}
-        <input type="text" name="q" />
-        <input type="submit" value="search" />
-    @{Html.EndForm();}*@
+</table>

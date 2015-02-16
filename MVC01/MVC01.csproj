@@ -272,6 +272,9 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\EditorTemplates\_CategoryDropDown.cshtml" />
     <Content Include="Views\Product\EditorTemplates\_SupplierDropDown.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,10 +1,10 @@
 ﻿@model MVC01.Models.Northwind.Product
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
 
-@*@using (Html.BeginForm())
+@*@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -12,8 +12,6 @@
         <h4>Product</h4>
         <hr />
         @Html.ValidationSummary(true)
-        @Html.HiddenFor(model => model.ProductID)
-
         <div class="form-group">
             @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -25,7 +23,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SupplierID, "SupplierID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("SupplierID", String.Empty)
+                @Html.DropDownList("Suppliers", String.Empty)
                 @Html.ValidationMessageFor(model => model.SupplierID)
             </div>
         </div>
@@ -33,7 +31,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CategoryID, "CategoryID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("CategoryID", String.Empty)
+                @Html.DropDownList("Categories", String.Empty)
                 @Html.ValidationMessageFor(model => model.CategoryID)
             </div>
         </div>
@@ -48,7 +46,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -59,7 +57,7 @@
         @Html.AntiForgeryToken()
         <legend>@ViewBag.Title</legend>
         @Html.EditorForModel()
-        <p><input type="submit" value="Save" /></p>
+        <p><input type="submit" value="Create" /></p>
     </fieldset>
     }
 
